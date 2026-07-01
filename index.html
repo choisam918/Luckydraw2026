@@ -1,0 +1,1905 @@
+<!DOCTYPE html>
+<html lang="zh-Hant" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>濠江中學附屬小學2025/2026 小六畢業師生聯歡晚宴抽獎</title>
+  <style>
+    :root,
+    [data-theme="dark"] {
+      --bg: #0f1419;
+      --surface: #1a2332;
+      --surface2: #243044;
+      --border: #2d3f56;
+      --text: #e8edf4;
+      --muted: #8b9cb3;
+      --accent-a: #3b82f6;
+      --accent-b: #10b981;
+      --gold: #f59e0b;
+      --danger: #ef4444;
+      --success: #34d399;
+      --radius: 12px;
+      --shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+      --title-from: #ffffff;
+      --title-to: #94a3b8;
+      --bg-glow-a: rgba(59, 130, 246, 0.12);
+      --bg-glow-b: rgba(16, 185, 129, 0.1);
+      --btn-primary-text: #1a1a1a;
+      --btn-danger-text: #fca5a5;
+      --chip-bg: rgba(245, 158, 11, 0.15);
+      --chip-border: rgba(245, 158, 11, 0.4);
+      --winner-new-bg: rgba(245, 158, 11, 0.12);
+      --mode-checked-bg: rgba(245, 158, 11, 0.08);
+      --round-active-bg: rgba(245, 158, 11, 0.1);
+      --round-done-bg: rgba(16, 185, 129, 0.08);
+      --danger-btn-bg: rgba(239, 68, 68, 0.15);
+      --danger-btn-border: rgba(239, 68, 68, 0.3);
+    }
+
+    [data-theme="light"] {
+      --bg: #eef2f7;
+      --surface: #ffffff;
+      --surface2: #f8fafc;
+      --border: #cbd5e1;
+      --text: #1e293b;
+      --muted: #64748b;
+      --accent-a: #2563eb;
+      --accent-b: #059669;
+      --gold: #d97706;
+      --danger: #dc2626;
+      --success: #059669;
+      --shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+      --title-from: #0f172a;
+      --title-to: #475569;
+      --bg-glow-a: rgba(37, 99, 235, 0.08);
+      --bg-glow-b: rgba(5, 150, 105, 0.06);
+      --btn-primary-text: #ffffff;
+      --btn-danger-text: #b91c1c;
+      --chip-bg: rgba(217, 119, 6, 0.12);
+      --chip-border: rgba(217, 119, 6, 0.35);
+      --winner-new-bg: rgba(217, 119, 6, 0.1);
+      --mode-checked-bg: rgba(217, 119, 6, 0.1);
+      --round-active-bg: rgba(217, 119, 6, 0.12);
+      --round-done-bg: rgba(5, 150, 105, 0.1);
+      --danger-btn-bg: rgba(220, 38, 38, 0.1);
+      --danger-btn-border: rgba(220, 38, 38, 0.25);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body {
+      height: 100%;
+      overflow: hidden;
+      overscroll-behavior: none;
+    }
+
+    body {
+      font-family: "Segoe UI", "Microsoft JhengHei", "PingFang TC", sans-serif;
+      background: var(--bg);
+      background-image:
+        radial-gradient(ellipse at 20% 0%, var(--bg-glow-a) 0%, transparent 55%),
+        radial-gradient(ellipse at 80% 100%, var(--bg-glow-b) 0%, transparent 55%);
+      color: var(--text);
+      line-height: 1.4;
+    }
+
+    .container {
+      height: 100vh;
+      width: 100vw;
+      max-width: none;
+      margin: 0;
+      padding: 10px 14px 12px;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .theme-toggle {
+      position: absolute;
+      top: 10px;
+      right: 14px;
+      padding: 5px 12px;
+      font-size: 0.75rem;
+      z-index: 10;
+    }
+
+    header {
+      flex-shrink: 0;
+      margin-bottom: 8px;
+    }
+
+    .header-brand {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+    }
+
+    .header-logo {
+      height: 52px;
+      width: auto;
+      object-fit: contain;
+      flex-shrink: 0;
+    }
+
+    header h1 {
+      font-size: 1.28rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      line-height: 1.3;
+      background: linear-gradient(135deg, var(--title-from) 0%, var(--title-to) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-align: left;
+    }
+
+    header p { color: var(--muted); margin-top: 2px; font-size: 0.78rem; }
+
+    .main-stage {
+      flex: 1;
+      min-height: 0;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .stage-panel {
+      display: none;
+      flex: 1;
+      min-height: 0;
+      flex-direction: column;
+      overflow: hidden;
+      gap: 8px;
+    }
+
+    .stage-panel.active { display: flex; }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 12px 14px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .card h2 {
+      font-size: 0.95rem;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 2px 10px;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+
+    .badge-a { background: rgba(59, 130, 246, 0.2); color: var(--accent-a); }
+    .badge-b { background: rgba(16, 185, 129, 0.2); color: var(--accent-b); }
+    .badge-round { background: rgba(245, 158, 11, 0.2); color: var(--gold); }
+
+    /* Setup */
+    #setupArea.card {
+      flex: 1;
+      min-height: 0;
+      display: none;
+      flex-direction: column;
+      margin-bottom: 0;
+    }
+
+    #setupArea.active { display: flex; }
+
+    .setup-desc {
+      color: var(--muted);
+      font-size: 0.78rem;
+      margin-bottom: 8px;
+      flex-shrink: 0;
+    }
+
+    .setup-mode-panel {
+      flex-shrink: 0;
+      margin-bottom: 8px;
+    }
+
+    .setup-mode-panel .setup-mode-label {
+      display: block;
+      font-size: 0.75rem;
+      color: var(--muted);
+      margin-bottom: 4px;
+    }
+
+    .setup-mode-panel .mode-select {
+      margin-top: 0;
+      flex-wrap: wrap;
+    }
+
+    .setup-mode-panel .mode-option {
+      flex: 1 1 calc(33.33% - 6px);
+      min-width: 120px;
+    }
+
+    .setup-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      flex: 1;
+      min-height: 0;
+    }
+
+    .list-panel {
+      display: flex;
+      flex-direction: column;
+      min-height: 0;
+      overflow: hidden;
+    }
+
+    .list-panel label {
+      display: block;
+      font-size: 0.75rem;
+      color: var(--muted);
+      margin-bottom: 4px;
+      flex-shrink: 0;
+    }
+
+    .list-panel textarea {
+      width: 100%;
+      flex: 1;
+      min-height: 0;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      color: var(--text);
+      padding: 8px 10px;
+      font-size: 0.72rem;
+      line-height: 1.35;
+      resize: none;
+      overflow: auto;
+      font-family: inherit;
+    }
+
+    .list-panel textarea:focus {
+      outline: none;
+      border-color: var(--accent-a);
+    }
+
+    #setupArea .btn-row {
+      margin-top: 8px;
+      flex-wrap: nowrap;
+      flex-shrink: 0;
+    }
+
+    #setupArea .btn-row button {
+      font-size: 0.82rem;
+      padding: 8px 12px;
+      white-space: nowrap;
+    }
+
+    .list-count {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-top: 4px;
+      flex-shrink: 0;
+    }
+
+    .list-count.ok { color: var(--success); }
+    .list-count.err { color: var(--danger); }
+
+    .list-actions {
+      display: flex;
+      gap: 6px;
+      margin-top: 4px;
+      flex-shrink: 0;
+    }
+
+    .list-actions button {
+      padding: 4px 10px;
+      font-size: 0.72rem;
+    }
+
+    .mode-select {
+      display: flex;
+      gap: 8px;
+      flex-wrap: nowrap;
+    }
+
+    .mode-option {
+      flex: 1;
+      min-width: 0;
+      cursor: pointer;
+    }
+
+    .mode-option input { display: none; }
+
+    .mode-option .mode-box {
+      border: 2px solid var(--border);
+      border-radius: 8px;
+      padding: 8px 10px;
+      transition: border-color 0.2s, background 0.2s;
+    }
+
+    .mode-option input:checked + .mode-box {
+      border-color: var(--gold);
+      background: var(--mode-checked-bg);
+    }
+
+    .mode-option .mode-title {
+      font-weight: 600;
+      font-size: 0.82rem;
+      margin-bottom: 2px;
+    }
+
+    .mode-option .mode-desc {
+      font-size: 0.72rem;
+      color: var(--muted);
+    }
+
+    .mode-select.disabled .mode-option { pointer-events: none; opacity: 0.55; }
+
+    .mode-panel {
+      background: transparent;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 4px 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex: 1;
+      min-width: 0;
+    }
+
+    .mode-panel h2 {
+      font-size: 0.74rem;
+      margin: 0;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .mode-panel .mode-select {
+      flex: 1;
+      min-width: 0;
+      margin-top: 0;
+    }
+
+    .btn-row {
+      display: flex;
+      gap: 8px;
+      flex-wrap: nowrap;
+      flex-shrink: 0;
+    }
+
+    button {
+      cursor: pointer;
+      border: none;
+      border-radius: 8px;
+      padding: 8px 16px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      font-family: inherit;
+      transition: transform 0.15s, opacity 0.15s, box-shadow 0.15s;
+      white-space: nowrap;
+    }
+
+    button:active:not(:disabled) { transform: scale(0.97); }
+    button:disabled { opacity: 0.45; cursor: not-allowed; }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--gold), #d97706);
+      color: var(--btn-primary-text);
+      box-shadow: 0 4px 14px rgba(245, 158, 11, 0.35);
+    }
+
+    .btn-secondary {
+      background: var(--surface2);
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+
+    .btn-danger {
+      background: var(--danger-btn-bg);
+      color: var(--btn-danger-text);
+      border: 1px solid var(--danger-btn-border);
+    }
+
+    /* Game area */
+    .game-body h2 {
+      flex-shrink: 0;
+      min-width: 0;
+    }
+
+    .game-body h2 #roundTitle {
+      display: none;
+    }
+
+    .round-progress {
+      display: flex;
+      gap: 6px;
+      flex-shrink: 0;
+    }
+
+    .round-step {
+      flex: 1;
+      min-width: 0;
+      text-align: center;
+      padding: 6px 4px;
+      border-radius: 8px;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      font-size: 0.72rem;
+      color: var(--muted);
+      transition: all 0.3s;
+      cursor: pointer;
+      font-family: inherit;
+    }
+
+    .round-step:hover:not(.active):not(:disabled) {
+      border-color: var(--muted);
+      color: var(--text);
+    }
+
+    .round-step:disabled {
+      opacity: 0.55;
+      cursor: not-allowed;
+    }
+
+    .round-step.active {
+      border-color: var(--gold);
+      color: var(--gold);
+      background: var(--round-active-bg);
+    }
+
+    .round-step.done {
+      border-color: var(--success);
+      color: var(--success);
+      background: var(--round-done-bg);
+    }
+
+    .game-body {
+      flex: 1;
+      min-height: 0;
+      display: grid;
+      grid-template-columns: 1fr 1.05fr;
+      gap: 10px;
+      padding: 10px 12px;
+      margin-bottom: 0;
+    }
+
+    .game-col {
+      display: flex;
+      flex-direction: column;
+      min-height: 0;
+      overflow: hidden;
+      gap: 8px;
+    }
+
+    .round-info {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 6px;
+      flex-shrink: 0;
+    }
+
+    #infoListItem {
+      display: none;
+    }
+
+    .info-item {
+      background: var(--surface2);
+      border-radius: 6px;
+      padding: 6px 8px;
+      text-align: center;
+    }
+
+    .info-item .label { font-size: 0.68rem; color: var(--muted); }
+    .info-item .value { font-size: 1.05rem; font-weight: 700; margin-top: 1px; }
+    .info-item .value.info-list { font-size: 0.78rem; line-height: 1.2; }
+
+    /* Drum */
+    .drum-area {
+      text-align: center;
+      padding: 12px 10px;
+      background: var(--surface2);
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      flex: 1;
+      min-height: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .drum-name {
+      font-size: clamp(1.6rem, 4vw, 2.4rem);
+      font-weight: 700;
+      line-height: 1.2;
+      transition: color 0.1s;
+    }
+
+    .drum-name.rolling { color: var(--gold); }
+
+    .drum-batch {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      grid-auto-flow: row;
+      gap: 8px;
+      width: 100%;
+      max-width: 100%;
+      box-sizing: border-box;
+    }
+
+    .drum-batch .chip {
+      background: var(--chip-bg);
+      border: 1px solid var(--chip-border);
+      color: var(--gold);
+      padding: 6px 4px;
+      border-radius: 8px;
+      font-weight: 600;
+      animation: popIn 0.35s ease backwards;
+      text-align: center;
+      min-width: 0;
+      width: 100%;
+      min-height: 56px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2px;
+    }
+
+    .drum-batch .chip .chip-class {
+      font-size: 0.72rem;
+      line-height: 1.2;
+      opacity: 0.9;
+    }
+
+    .drum-batch .chip .chip-name {
+      font-size: 1.05rem;
+      line-height: 1.2;
+      word-break: keep-all;
+    }
+
+    @keyframes popIn {
+      from { opacity: 0; transform: scale(0.8) translateY(8px); }
+      to { opacity: 1; transform: scale(1) translateY(0); }
+    }
+
+    .draw-actions {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      gap: 6px;
+      align-items: center;
+      flex-shrink: 0;
+      width: 100%;
+    }
+
+    .draw-actions button {
+      padding: 6px 10px;
+      font-size: 0.76rem;
+    }
+
+    .draw-actions > button {
+      flex: 0 0 auto;
+    }
+
+    #btnShowSummary {
+      white-space: nowrap;
+    }
+
+    #btnDraw {
+      width: 132px;
+      min-width: 132px;
+      flex: 0 0 132px;
+      text-align: center;
+      transition: opacity 0.15s, box-shadow 0.15s;
+    }
+
+    #btnDraw:active:not(:disabled) {
+      transform: none;
+    }
+
+    .draw-actions > .mode-panel {
+      flex: 0 0 auto;
+      width: auto;
+      padding: 3px 6px;
+      gap: 6px;
+    }
+
+    .draw-actions .mode-panel h2 {
+      font-size: 0.68rem;
+    }
+
+    .draw-actions .mode-select {
+      flex: 0 0 auto;
+      width: auto;
+      gap: 4px;
+    }
+
+    .draw-actions .mode-option .mode-box {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      width: auto;
+      white-space: nowrap;
+      padding: 4px 6px;
+    }
+
+    .draw-actions .mode-option .mode-title {
+      font-size: 0.7rem;
+      margin-bottom: 0;
+    }
+
+    .draw-actions .mode-option .mode-desc {
+      font-size: 0.65rem;
+    }
+
+    .game-col-side {
+      background: var(--surface2);
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      padding: 8px 10px;
+    }
+
+    .result-panel {
+      flex: 1;
+      min-height: 0;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    .result-panel h3 {
+      font-size: 0.78rem;
+      margin-bottom: 6px;
+      color: var(--muted);
+      flex-shrink: 0;
+    }
+
+    .winner-list {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      grid-auto-flow: row;
+      gap: 6px;
+      align-content: start;
+      flex: 1;
+      min-height: 0;
+      overflow: hidden;
+    }
+
+    .winner-list .winner {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 6px 8px;
+      font-size: 0.88rem;
+      height: 34px;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      min-width: 0;
+      width: 100%;
+      justify-self: stretch;
+    }
+
+    .winner-list .winner.new {
+      border-color: var(--gold);
+      background: var(--winner-new-bg);
+      animation: popIn 0.3s ease;
+    }
+
+    .winner-list .winner .num {
+      color: var(--muted);
+      flex: 0 0 auto;
+      margin-right: 2px;
+      font-size: 0.82rem;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .game-side-footer {
+      flex-shrink: 0;
+      margin-top: 6px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .game-side-footer button {
+      width: 100%;
+      padding: 6px 12px;
+      font-size: 0.8rem;
+    }
+
+    .backup-row {
+      display: flex;
+      gap: 6px;
+    }
+
+    .backup-row button {
+      flex: 1;
+      padding: 5px 8px;
+      font-size: 0.72rem;
+    }
+
+    /* Summary */
+    #summaryArea {
+      display: none;
+      flex: 1;
+      min-height: 0;
+      flex-direction: column;
+      margin-bottom: 0;
+    }
+
+    #summaryArea.active { display: flex; }
+
+    #summaryContent {
+      flex: 1;
+      min-height: 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      gap: 8px;
+      overflow: hidden;
+    }
+
+    #summaryContent > .summary-round:only-child {
+      grid-column: 1 / -1;
+      grid-row: 1 / -1;
+    }
+
+    #summaryContent > .summary-round:only-child h3 {
+      font-size: 1.1rem;
+      margin-bottom: 10px;
+      padding-bottom: 8px;
+    }
+
+    #summaryContent > .summary-round:only-child .summary-names {
+      gap: clamp(6px, 1vh, 12px);
+    }
+
+    #summaryContent > .summary-round:only-child .summary-names span {
+      font-size: clamp(0.85rem, 1.8vw, 1.2rem);
+      height: auto;
+      min-height: clamp(36px, 7vh, 68px);
+      padding: clamp(6px, 1vh, 12px) clamp(8px, 1vw, 14px);
+      border-radius: 6px;
+    }
+
+    .summary-round {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 8px 10px;
+      display: flex;
+      flex-direction: column;
+      min-height: 0;
+      overflow: hidden;
+    }
+
+    .summary-round h3 {
+      font-size: 0.78rem;
+      margin-bottom: 6px;
+      padding-bottom: 4px;
+      border-bottom: 1px solid var(--border);
+      flex-shrink: 0;
+    }
+
+    .summary-names {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      grid-auto-flow: row;
+      gap: 3px;
+      align-content: start;
+      flex: 1;
+      min-height: 0;
+      overflow-y: auto;
+      overflow-x: hidden;
+    }
+
+    .summary-names span {
+      background: var(--surface);
+      padding: 3px 5px;
+      border-radius: 4px;
+      font-size: 0.65rem;
+      height: 22px;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      min-width: 0;
+      width: 100%;
+      border: 1px solid var(--border);
+    }
+
+    .summary-actions {
+      flex-shrink: 0;
+      margin-top: 8px;
+    }
+
+    .hidden { display: none !important; }
+  </style>
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem('luckydraw-theme');
+        if (saved === 'light' || saved === 'dark') {
+          document.documentElement.setAttribute('data-theme', saved);
+        }
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+  <div class="container">
+    <button type="button" class="btn-secondary theme-toggle" id="btnTheme">淺色模式</button>
+    <header>
+      <div class="header-brand">
+        <img class="header-logo" src="Image_20241210091543.png" alt="濠江中學附屬小學" />
+        <h1>濠江中學附屬小學2025/2026 小六畢業師生聯歡晚宴抽獎</h1>
+      </div>
+    </header>
+
+    <main class="main-stage">
+    <!-- Setup -->
+    <section id="setupArea" class="card stage-panel active">
+      <h2>① 名單設定</h2>
+      <p class="setup-desc">
+        已自動載入資料夾內名單檔，亦可手動編輯或按「新增一人」臨時加名。人數會隨名單即時更新。
+      </p>
+      <div class="setup-mode-panel">
+        <span class="setup-mode-label">名單模式</span>
+        <div class="mode-select">
+          <label class="mode-option">
+            <input type="radio" name="listMode" value="split" checked />
+            <div class="mode-box">
+              <div class="mode-title">分開抽</div>
+              <div class="mode-desc">第一、三輪用 1-3 班；第二、四輪用 4-6 班</div>
+            </div>
+          </label>
+          <label class="mode-option">
+            <input type="radio" name="listMode" value="merged" />
+            <div class="mode-box">
+              <div class="mode-title">合併抽</div>
+              <div class="mode-desc" id="mergedModeDesc">四輪均從兩份名單合併後抽取</div>
+            </div>
+          </label>
+          <label class="mode-option">
+            <input type="radio" name="listMode" value="extra" />
+            <div class="mode-box">
+              <div class="mode-title">臨時加抽</div>
+              <div class="mode-desc">合併名單、無固定人數，隨時加抽</div>
+            </div>
+          </label>
+        </div>
+      </div>
+      <div class="setup-grid">
+        <div class="list-panel">
+          <label for="listA">六年級1-3班名單（第一輪、第三輪使用）</label>
+          <textarea id="listA" placeholder="每行一個姓名…"></textarea>
+          <div id="countA" class="list-count">0 人</div>
+          <div class="list-actions">
+            <button type="button" class="btn-secondary btn-add-person" data-list="listA" data-count="countA">＋ 新增一人</button>
+          </div>
+        </div>
+        <div class="list-panel">
+          <label for="listB">六年級4-6班名單（第二輪、第四輪使用）</label>
+          <textarea id="listB" placeholder="每行一個姓名…"></textarea>
+          <div id="countB" class="list-count">0 人</div>
+          <div class="list-actions">
+            <button type="button" class="btn-secondary btn-add-person" data-list="listB" data-count="countB">＋ 新增一人</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="btn-row">
+        <button class="btn-secondary" id="btnFillDemo">重新載入名單</button>
+        <button class="btn-secondary btn-export-backup" type="button">匯出備份</button>
+        <button class="btn-secondary btn-import-backup" type="button">匯入備份</button>
+        <button class="btn-primary" id="btnStart">開始抽獎</button>
+      </div>
+    </section>
+
+    <!-- Game -->
+    <section id="gameArea" class="stage-panel">
+      <div class="round-progress" id="roundProgress"></div>
+
+      <div class="card game-body">
+        <div class="game-col game-col-main">
+          <h2 id="gameHeading">
+            <span class="badge badge-round" id="roundBadge">第一輪</span>
+            <span id="roundTitle">六年級1-3班名單</span>
+          </h2>
+
+          <div class="round-info">
+            <div class="info-item" id="infoListItem">
+              <div class="label">名單</div>
+              <div class="value info-list" id="infoList">六年級1-3班</div>
+            </div>
+            <div class="info-item" id="infoTargetItem">
+              <div class="label">本輪目標</div>
+              <div class="value" id="infoTarget">25</div>
+            </div>
+            <div class="info-item">
+              <div class="label">已抽出</div>
+              <div class="value" id="infoDrawn">0</div>
+            </div>
+            <div class="info-item">
+              <div class="label" id="infoPoolLabel">同組剩餘</div>
+              <div class="value" id="infoPool">103</div>
+            </div>
+          </div>
+
+          <div class="drum-area">
+            <div id="drumSingle" class="drum-name">準備就緒</div>
+            <div id="drumBatch" class="drum-batch hidden"></div>
+          </div>
+
+          <div class="draw-actions">
+            <div class="mode-panel" id="modePanel">
+              <h2>抽獎方式</h2>
+              <div class="mode-select" id="modeSelect">
+                <label class="mode-option">
+                  <input type="radio" name="drawMode" value="single" checked />
+                  <div class="mode-box">
+                    <div class="mode-title">方式一：一個一個抽</div>
+                    <div class="mode-desc">每次 1 人</div>
+                  </div>
+                </label>
+                <label class="mode-option">
+                  <input type="radio" name="drawMode" value="batch" />
+                  <div class="mode-box">
+                    <div class="mode-title">方式二：5 個 5 個抽</div>
+                    <div class="mode-desc">每次 5 人</div>
+                  </div>
+                </label>
+              </div>
+            </div>
+            <button class="btn-primary" id="btnDraw">抽下一個</button>
+          </div>
+        </div>
+
+        <div class="game-col game-col-side">
+          <div class="result-panel">
+            <h3>本輪中獎名單</h3>
+            <div class="winner-list" id="currentWinners"></div>
+          </div>
+          <div class="game-side-footer">
+            <button class="btn-secondary" id="btnBackToSetupFromGame">返回名單設定</button>
+            <button class="btn-secondary" id="btnShowSummary">查看全部結果</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Summary -->
+    <section id="summaryArea" class="card stage-panel">
+      <h2>🎉 抽獎完成 · 全部結果</h2>
+      <div id="summaryContent"></div>
+      <div class="btn-row summary-actions">
+        <button class="btn-secondary" id="btnBackToGame">返回繼續抽獎</button>
+        <button class="btn-secondary" id="btnBackToSetup">返回名單設定</button>
+        <button class="btn-secondary" id="btnExport">匯出結果 (CSV)</button>
+        <button class="btn-secondary btn-export-backup" type="button">匯出備份</button>
+        <button class="btn-secondary btn-import-backup" type="button">匯入備份</button>
+        <button class="btn-primary" id="btnRestart">重新開始</button>
+      </div>
+    </section>
+    </main>
+    <input type="file" id="importBackupFile" accept=".json,application/json" class="hidden" />
+  </div>
+
+  <script src="lists-data.js"></script>
+  <script>
+    const LIST_NAMES = {
+      A: '六年級1-3班名單',
+      B: '六年級4-6班名單',
+    };
+
+    const LIST_ROUND_GROUPS = {
+      A: [0, 2],
+      B: [1, 3],
+    };
+
+    const ROUNDS = [
+      { id: 1, list: 'A', count: 25, label: '第一輪', linkedRound: 3 },
+      { id: 2, list: 'B', count: 25, label: '第二輪', linkedRound: 4 },
+      { id: 3, list: 'A', count: 5,  label: '第三輪', linkedRound: 1 },
+      { id: 4, list: 'B', count: 5,  label: '第四輪', linkedRound: 2 },
+    ];
+
+    function getRoundDesc(round) {
+      if (listMode === 'merged' || listMode === 'extra') return '';
+      return LIST_NAMES[round.list];
+    }
+
+    function isExtraMode() {
+      return listMode === 'extra';
+    }
+
+    function normalizeListMode(mode) {
+      if (mode === 'merged') return 'merged';
+      if (mode === 'extra') return 'extra';
+      return 'split';
+    }
+
+    function validateLinkedRoundsNoOverlap(results) {
+      if (listMode === 'merged') {
+        const all = new Set();
+        for (let i = 0; i < results.length; i++) {
+          for (const name of results[i]) {
+            if (all.has(name)) return '合併模式下不同輪次有重複中獎者';
+            all.add(name);
+          }
+        }
+        return null;
+      }
+      for (const indices of Object.values(LIST_ROUND_GROUPS)) {
+        const [a, b] = indices;
+        const setA = new Set(results[a]);
+        for (const name of results[b]) {
+          if (setA.has(name)) {
+            return `${ROUNDS[a].label}與${ROUNDS[b].label}有重複中獎者`;
+          }
+        }
+      }
+      return null;
+    }
+
+    function getLinkedRoundIndices(roundIdx) {
+      const round = ROUNDS[roundIdx];
+      return LIST_ROUND_GROUPS[round.list].filter((i) => i !== roundIdx);
+    }
+
+    function getSharedWonSet(roundIdx) {
+      const round = ROUNDS[roundIdx];
+      const won = new Set();
+      LIST_ROUND_GROUPS[round.list].forEach((i) => {
+        roundResults[i].forEach((name) => won.add(name));
+      });
+      const listSet = new Set(round.list === 'A' ? listA : listB);
+      extraResults.forEach((name) => {
+        if (listSet.has(name)) won.add(name);
+      });
+      return won;
+    }
+
+    function getSharedRemainingCount(roundIdx) {
+      if (isExtraMode()) {
+        return getMergedList().length - getExtraExcludedWinners().size;
+      }
+      if (listMode === 'merged') {
+        const allWon = new Set();
+        roundResults.forEach((r) => r.forEach((name) => allWon.add(name)));
+        return getMergedList().length - allWon.size;
+      }
+      const round = ROUNDS[roundIdx];
+      const full = round.list === 'A' ? listA : listB;
+      return full.length - getSharedWonSet(roundIdx).size;
+    }
+
+    const BACKUP_VERSION = 3;
+    const BACKUP_KEY = 'luckydraw-backup';
+
+    let listA = [];
+    let listB = [];
+    let listMode = 'split';
+    let drawMode = 'single';
+    let currentRound = 0;
+    let roundResults = [[], [], [], []];
+    let extraResults = [];
+    let isRolling = false;
+
+    const $ = (id) => document.getElementById(id);
+
+    function escapeHtml(text) {
+      return String(text)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;');
+    }
+
+    function showPanel(panelId) {
+      ['setupArea', 'gameArea', 'summaryArea'].forEach((id) => {
+        $(id).classList.toggle('active', id === panelId);
+      });
+    }
+
+    function getDrawMode() {
+      const checked = document.querySelector('#gameArea input[name="drawMode"]:checked');
+      return checked ? checked.value : 'single';
+    }
+
+    function getListMode() {
+      const checked = document.querySelector('#setupArea input[name="listMode"]:checked');
+      return normalizeListMode(checked ? checked.value : 'split');
+    }
+
+    function syncDrawMode() {
+      drawMode = getDrawMode();
+    }
+
+    function syncListMode() {
+      listMode = getListMode();
+    }
+
+    function syncListsFromTextarea() {
+      listA = parseList($('listA').value);
+      listB = parseList($('listB').value);
+    }
+
+    function applyListsFromSetup() {
+      syncListMode();
+      syncListsFromTextarea();
+      const listErr = validateListNames(listA, listB, listMode);
+      if (listErr) {
+        alert(listErr);
+        return false;
+      }
+      return true;
+    }
+
+    function getMergedList() {
+      return [...listA, ...listB];
+    }
+
+    function getPriorRoundWinners() {
+      const won = new Set();
+      roundResults.forEach((round) => {
+        round.forEach((name) => won.add(name));
+      });
+      return won;
+    }
+
+    function getExtraExcludedWinners() {
+      const won = getPriorRoundWinners();
+      extraResults.forEach((name) => won.add(name));
+      return won;
+    }
+
+    function parseNameLine(line) {
+      const trimmed = line.trim();
+      if (!trimmed) return null;
+      const parts = trimmed.split('\t');
+      if (parts.length >= 2) {
+        const cls = parts[0].trim();
+        const name = parts[1].replace(/\s+/g, '');
+        return `${cls} ${name}`;
+      }
+      return trimmed;
+    }
+
+    function parseList(text) {
+      return text
+        .split(/\r?\n/)
+        .map(parseNameLine)
+        .filter((s) => s && s.length > 0);
+    }
+
+    function applyLists(namesA, namesB) {
+      $('listA').value = namesA.join('\n');
+      $('listB').value = namesB.join('\n');
+      updateCount('listA', 'countA');
+      updateCount('listB', 'countB');
+    }
+
+    async function fetchListFile(file) {
+      const res = await fetch(file);
+      if (!res.ok) throw new Error(`無法讀取 ${file}`);
+      const text = await res.text();
+      return parseList(text);
+    }
+
+    async function loadLists() {
+      try {
+        const [namesA, namesB] = await Promise.all([
+          fetchListFile(LIST_FILE_A),
+          fetchListFile(LIST_FILE_B),
+        ]);
+        if (!namesA.length || !namesB.length) throw new Error('名單為空');
+        applyLists(namesA, namesB);
+        syncListsFromTextarea();
+      } catch {
+        applyLists([...EMBEDDED_LIST_A], [...EMBEDDED_LIST_B]);
+        syncListsFromTextarea();
+      }
+    }
+
+    function validateWinnersInLists(data) {
+      const pool = new Set([...data.listA, ...data.listB]);
+      const winners = [];
+      const results = normalizeRoundResults(data.roundResults);
+      results.forEach((round) => winners.push(...round));
+      if (Array.isArray(data.extraResults)) winners.push(...data.extraResults);
+      for (const name of winners) {
+        if (!pool.has(name)) return `中獎者「${name}」不在名單內`;
+      }
+      return null;
+    }
+
+    function normalizeRoundResults(results) {
+      if (!Array.isArray(results) || results.length !== 4) {
+        return [[], [], [], []];
+      }
+      return results.map((round) => (Array.isArray(round) ? [...round] : []));
+    }
+
+    function hasBackupProgress(data) {
+      const results = normalizeRoundResults(data.roundResults);
+      const extra = Array.isArray(data.extraResults) ? data.extraResults : [];
+      return results.some((round) => round.length > 0) || extra.length > 0;
+    }
+
+    function validateListNames(namesA, namesB, mode) {
+      if (!namesA.length) {
+        return `${LIST_NAMES.A}至少需要一人`;
+      }
+      if (!namesB.length) {
+        return `${LIST_NAMES.B}至少需要一人`;
+      }
+      if (namesA.length !== new Set(namesA).size) {
+        return `${LIST_NAMES.A}有重複姓名，請修正後再開始`;
+      }
+      if (namesB.length !== new Set(namesB).size) {
+        return `${LIST_NAMES.B}有重複姓名，請修正後再開始`;
+      }
+      if (mode === 'merged' || mode === 'extra') {
+        const merged = [...namesA, ...namesB];
+        if (merged.length !== new Set(merged).size) {
+          return '合併名單有重複姓名（含兩份名單之間的重複），請修正後再開始';
+        }
+      }
+      return null;
+    }
+
+    function updateCount(textareaId, countId) {
+      const names = parseList($(textareaId).value);
+      const dup = names.length !== new Set(names).size;
+      const el = $(countId);
+      el.textContent = dup ? `${names.length} 人（有重複）` : `${names.length} 人`;
+      el.className = 'list-count ' + (dup ? 'err' : 'ok');
+    }
+
+    function addPersonToList(textareaId, countId) {
+      const input = prompt('請輸入姓名\n（可填「六(1) 王小明」含班別，或只填姓名）');
+      if (input === null) return;
+      const trimmed = input.trim();
+      if (!trimmed) return;
+
+      const ta = $(textareaId);
+      const prefix = ta.value.trim() ? '\n' : '';
+      ta.value = `${ta.value.trimEnd()}${prefix}${trimmed}`;
+      updateCount(textareaId, countId);
+      ta.focus();
+      ta.setSelectionRange(ta.value.length, ta.value.length);
+    }
+
+    function getPool(roundIdx) {
+      if (isExtraMode()) {
+        const excluded = getExtraExcludedWinners();
+        return getMergedList().filter((name) => !excluded.has(name));
+      }
+      const round = ROUNDS[roundIdx];
+      const full = listMode === 'merged'
+        ? getMergedList()
+        : (round.list === 'A' ? [...listA] : [...listB]);
+      const excluded = new Set();
+      if (listMode === 'merged') {
+        roundResults.forEach((results, i) => {
+          if (i !== roundIdx) results.forEach((name) => excluded.add(name));
+        });
+      } else {
+        getLinkedRoundIndices(roundIdx).forEach((i) => {
+          roundResults[i].forEach((name) => excluded.add(name));
+        });
+      }
+      extraResults.forEach((name) => excluded.add(name));
+      return full.filter((name) => !excluded.has(name));
+    }
+
+    function getRemaining(roundIdx) {
+      if (isExtraMode()) return getPool(roundIdx);
+      const pool = getPool(roundIdx);
+      const drawn = new Set(roundResults[roundIdx]);
+      return pool.filter((name) => !drawn.has(name));
+    }
+
+    function shuffle(arr) {
+      const a = [...arr];
+      for (let i = a.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [a[i], a[j]] = [a[j], a[i]];
+      }
+      return a;
+    }
+
+    function pickRandom(pool, n) {
+      return shuffle(pool).slice(0, n);
+    }
+
+    function renderRoundProgress() {
+      const container = $('roundProgress');
+      if (isExtraMode()) {
+        container.innerHTML = '';
+        container.style.display = 'none';
+        return;
+      }
+      container.style.display = '';
+      container.innerHTML = ROUNDS.map((r, i) => {
+        let cls = 'round-step';
+        if (i === currentRound) cls += ' active';
+        if (roundResults[i].length >= r.count) cls += ' done';
+        const progress = `${roundResults[i].length}/${r.count}`;
+        return `<button type="button" class="${cls}" data-round="${i}" ${isRolling ? 'disabled' : ''}>${r.label}<br><small>${progress} 人</small></button>`;
+      }).join('');
+    }
+
+    function switchRound(roundIdx) {
+      if (isExtraMode()) return;
+      if (isRolling || roundIdx === currentRound) return;
+      if (roundIdx < 0 || roundIdx >= ROUNDS.length) return;
+
+      currentRound = roundIdx;
+      const round = ROUNDS[currentRound];
+      const drawn = roundResults[currentRound].length;
+
+      $('drumSingle').classList.remove('hidden');
+      $('drumBatch').classList.add('hidden');
+      $('drumSingle').textContent = drawn >= round.count ? '本輪抽完！' : '準備就緒';
+      updateRoundUI();
+      saveAutoBackup();
+    }
+
+    function renderCurrentWinners() {
+      const container = $('currentWinners');
+      const winners = isExtraMode() ? extraResults : roundResults[currentRound];
+      container.innerHTML = winners
+        .map((name, i) => `<div class="winner"><span class="num">${i + 1}.</span>${escapeHtml(name)}</div>`)
+        .join('');
+    }
+
+    function updateRoundUI() {
+      syncDrawMode();
+
+      if (isExtraMode()) {
+        const pool = getRemaining(0);
+        $('roundBadge').style.display = 'none';
+        $('gameHeading').style.display = 'none';
+        $('roundTitle').textContent = '';
+        $('infoTargetItem').style.display = 'none';
+        $('infoPoolLabel').textContent = '名單剩餘';
+        $('infoDrawn').textContent = extraResults.length;
+        $('infoPool').textContent = getSharedRemainingCount(0);
+
+        $('btnDraw').disabled = pool.length === 0 || isRolling;
+        $('btnDraw').textContent = drawMode === 'batch' ? '抽下一批（5 人）' : '抽下一個';
+        $('modeSelect').classList.toggle('disabled', isRolling);
+
+        if (!isRolling && $('drumSingle').textContent === '本輪抽完！') {
+          $('drumSingle').textContent = '準備就緒';
+        }
+
+        renderRoundProgress();
+        renderCurrentWinners();
+        return;
+      }
+
+      $('infoTargetItem').style.display = '';
+      const round = ROUNDS[currentRound];
+      const drawn = roundResults[currentRound].length;
+
+      $('gameHeading').style.display = '';
+      $('roundBadge').style.display = '';
+      $('roundBadge').textContent = round.label;
+      $('roundTitle').textContent = getRoundDesc(round);
+      $('infoPoolLabel').textContent = listMode === 'merged' ? '名單剩餘' : '同組剩餘';
+      $('infoTarget').textContent = round.count;
+      $('infoDrawn').textContent = drawn;
+      $('infoPool').textContent = getSharedRemainingCount(currentRound);
+
+      const remaining = round.count - drawn;
+      const canDraw = remaining > 0 && !isRolling;
+
+      $('btnDraw').disabled = !canDraw;
+      $('btnDraw').textContent = drawMode === 'batch' ? '抽下一批（5 人）' : '抽下一個';
+
+      $('modeSelect').classList.toggle('disabled', isRolling);
+
+      if (drawn >= round.count) {
+        if (!isRolling) $('drumSingle').textContent = '本輪抽完！';
+      } else if (!isRolling) {
+        if ($('drumSingle').textContent === '本輪抽完！') {
+          $('drumSingle').textContent = '準備就緒';
+        }
+      }
+
+      renderRoundProgress();
+      renderCurrentWinners();
+    }
+
+    function showDrumSingle(name, rolling) {
+      $('drumSingle').classList.remove('hidden');
+      $('drumBatch').classList.add('hidden');
+      const el = $('drumSingle');
+      el.textContent = name;
+      el.classList.toggle('rolling', rolling);
+    }
+
+    function splitDisplayName(full) {
+      const space = full.indexOf(' ');
+      if (space === -1) return { cls: '', name: full };
+      return { cls: full.slice(0, space), name: full.slice(space + 1) };
+    }
+
+    function formatDrumChip(full, delay) {
+      const { cls, name } = splitDisplayName(full);
+      return `<div class="chip" style="animation-delay:${delay}s"><span class="chip-class">${escapeHtml(cls)}</span><span class="chip-name">${escapeHtml(name)}</span></div>`;
+    }
+
+    function showDrumBatch(names) {
+      $('drumSingle').classList.add('hidden');
+      $('drumBatch').classList.remove('hidden');
+      $('drumBatch').innerHTML = names
+        .map((n, i) => formatDrumChip(n, i * 0.06))
+        .join('');
+    }
+
+    function animateSingleDraw(winner, pool, onDone) {
+      isRolling = true;
+      $('btnDraw').disabled = true;
+      let ticks = 0;
+      const maxTicks = 18;
+      const interval = setInterval(() => {
+        const fake = pool[Math.floor(Math.random() * pool.length)];
+        showDrumSingle(fake, true);
+        ticks++;
+        if (ticks >= maxTicks) {
+          clearInterval(interval);
+          showDrumSingle(winner, false);
+          isRolling = false;
+          onDone();
+        }
+      }, 80);
+    }
+
+    function animateBatchDraw(winners, pool, onDone) {
+      isRolling = true;
+      $('btnDraw').disabled = true;
+      let ticks = 0;
+      const maxTicks = 14;
+      const interval = setInterval(() => {
+        const fake = pickRandom(pool, winners.length);
+        showDrumBatch(fake);
+        ticks++;
+        if (ticks >= maxTicks) {
+          clearInterval(interval);
+          showDrumBatch(winners);
+          isRolling = false;
+          onDone();
+        }
+      }, 90);
+    }
+
+    function doDraw() {
+      syncDrawMode();
+      if (isRolling) return;
+
+      if (isExtraMode()) {
+        const pool = getRemaining(0);
+        if (pool.length === 0) {
+          alert('沒有可抽取的人員（先前輪次或本次加抽已中獎者不可重複）。');
+          return;
+        }
+        const batchSize = drawMode === 'batch' ? Math.min(5, pool.length) : 1;
+        const winners = pickRandom(pool, batchSize);
+        const finish = () => {
+          extraResults.push(...winners);
+          const container = $('currentWinners');
+          winners.forEach((name, i) => {
+            const idx = extraResults.length - winners.length + i;
+            const div = document.createElement('div');
+            div.className = 'winner new';
+            div.innerHTML = `<span class="num">${idx + 1}.</span>${escapeHtml(name)}`;
+            container.appendChild(div);
+          });
+          updateRoundUI();
+          saveAutoBackup();
+        };
+        if (drawMode === 'batch') {
+          animateBatchDraw(winners, pool, finish);
+        } else {
+          animateSingleDraw(winners[0], pool, finish);
+        }
+        return;
+      }
+
+      const round = ROUNDS[currentRound];
+      const drawn = roundResults[currentRound].length;
+      const remaining = round.count - drawn;
+      if (remaining <= 0 || isRolling) return;
+
+      const pool = getRemaining(currentRound);
+      if (pool.length === 0) {
+        const msg = listMode === 'merged'
+          ? '沒有可抽取的人員（其他輪次已中獎者不可重複）。'
+          : '沒有可抽取的人員（同組另一輪已中獎者不可重複）。';
+        alert(msg);
+        return;
+      }
+      const batchSize = drawMode === 'batch' ? Math.min(5, remaining) : 1;
+      const winners = pickRandom(pool, batchSize);
+
+      const finish = () => {
+        roundResults[currentRound].push(...winners);
+        const container = $('currentWinners');
+        winners.forEach((name, i) => {
+          const idx = roundResults[currentRound].length - winners.length + i;
+          const div = document.createElement('div');
+          div.className = 'winner new';
+          div.innerHTML = `<span class="num">${idx + 1}.</span>${escapeHtml(name)}`;
+          container.appendChild(div);
+        });
+        updateRoundUI();
+        saveAutoBackup();
+      };
+
+      if (drawMode === 'batch') {
+        animateBatchDraw(winners, pool, finish);
+      } else {
+        animateSingleDraw(winners[0], pool, finish);
+      }
+    }
+
+    function allRoundsComplete() {
+      if (isExtraMode()) return true;
+      return ROUNDS.every((r, i) => roundResults[i].length >= r.count);
+    }
+
+    function renderRoundSummaryHtml() {
+      const useMergedHeading = listMode === 'merged';
+      return ROUNDS.map((r, i) => {
+        const badge = r.list === 'A' ? 'badge-a' : 'badge-b';
+        const names = roundResults[i]
+          .map((n, j) => `<span>${j + 1}. ${escapeHtml(n)}</span>`)
+          .join('');
+        const heading = useMergedHeading
+          ? `${r.label} — ${r.count} 人`
+          : `<span class="badge ${badge}">${LIST_NAMES[r.list]}</span> ${r.label} — ${r.count} 人`;
+        return `
+          <div class="summary-round">
+            <h3>${heading}</h3>
+            <div class="summary-names">${names || '<span style="color:var(--muted)">尚未抽出任何人</span>'}</div>
+          </div>`;
+      }).join('');
+    }
+
+    function renderExtraSummaryHtml() {
+      const names = extraResults
+        .map((n, j) => `<span>${j + 1}. ${escapeHtml(n)}</span>`)
+        .join('');
+      return `
+        <div class="summary-round">
+          <h3>${extraResults.length} 人</h3>
+          <div class="summary-names">${names || '<span style="color:var(--muted)">尚未抽出任何人</span>'}</div>
+        </div>`;
+    }
+
+    function showSummary() {
+      showPanel('summaryArea');
+      saveAutoBackup();
+
+      const parts = [];
+      if (roundResults.some((r) => r.length > 0)) {
+        parts.push(renderRoundSummaryHtml());
+      }
+      if (extraResults.length > 0 || isExtraMode()) {
+        parts.push(renderExtraSummaryHtml());
+      }
+      if (parts.length === 0) {
+        parts.push('<div class="summary-round"><div class="summary-names"><span style="color:var(--muted)">尚未抽出任何人</span></div></div>');
+      }
+
+      $('summaryContent').innerHTML = parts.join('');
+    }
+
+    function backToGame() {
+      if (!applyListsFromSetup()) return;
+      showPanel('gameArea');
+      updateRoundUI();
+      saveAutoBackup();
+    }
+
+    function backToSetup() {
+      showPanel('setupArea');
+      saveAutoBackup();
+    }
+
+    function getActivePanel() {
+      if ($('gameArea').classList.contains('active')) return 'gameArea';
+      if ($('summaryArea').classList.contains('active')) return 'summaryArea';
+      return 'setupArea';
+    }
+
+    function buildBackupData() {
+      return {
+        version: BACKUP_VERSION,
+        app: '濠江中學附屬小學2025/2026 小六畢業師生聯歡晚宴抽獎',
+        savedAt: new Date().toISOString(),
+        listA: parseList($('listA').value),
+        listB: parseList($('listB').value),
+        listMode: getListMode(),
+        roundResults: roundResults.map((round) => [...round]),
+        extraResults: [...extraResults],
+        currentRound,
+        drawMode: getDrawMode(),
+        activePanel: getActivePanel(),
+        inGame: getActivePanel() !== 'setupArea',
+      };
+    }
+
+    function validateBackup(data) {
+      if (!data || typeof data !== 'object') return '備份格式不正確';
+      if (![1, 2, 3].includes(data.version)) return '備份版本不相容';
+      if (!Array.isArray(data.listA) || !Array.isArray(data.listB)) return '名單資料缺失';
+      const backupListMode = normalizeListMode(data.listMode);
+      const listErr = validateListNames(data.listA, data.listB, backupListMode);
+      if (listErr) return listErr;
+      const winnerErr = validateWinnersInLists(data);
+      if (winnerErr) return winnerErr;
+      const roundResultsData = normalizeRoundResults(data.roundResults);
+      if (backupListMode === 'extra') {
+        if (!Array.isArray(data.extraResults)) return '臨時加抽結果資料缺失';
+        if (new Set(data.extraResults).size !== data.extraResults.length) return '臨時加抽有重複中獎者';
+        const prior = new Set();
+        roundResultsData.forEach((round) => round.forEach((name) => prior.add(name)));
+        for (const name of data.extraResults) {
+          if (prior.has(name)) return '臨時加抽與先前輪次有重複中獎者';
+        }
+        return null;
+      }
+      for (let i = 0; i < ROUNDS.length; i++) {
+        const round = roundResultsData[i];
+        if (round.length > ROUNDS[i].count) return `${ROUNDS[i].label}人數超出上限`;
+        if (new Set(round).size !== round.length) return `${ROUNDS[i].label}有重複中獎者`;
+      }
+      const prevMode = listMode;
+      listMode = backupListMode;
+      const linkedErr = validateLinkedRoundsNoOverlap(roundResultsData);
+      listMode = prevMode;
+      if (linkedErr) return linkedErr;
+      if (Array.isArray(data.extraResults) && data.extraResults.length > 0) {
+        const prior = new Set();
+        roundResultsData.forEach((round) => round.forEach((name) => prior.add(name)));
+        for (const name of data.extraResults) {
+          if (prior.has(name)) return '臨時加抽與先前輪次有重複中獎者';
+        }
+      }
+      return null;
+    }
+
+    function applyBackup(data) {
+      applyLists(data.listA, data.listB);
+      listA = [...data.listA];
+      listB = [...data.listB];
+      listMode = normalizeListMode(data.listMode);
+      const listModeInput = document.querySelector(`#setupArea input[name="listMode"][value="${listMode}"]`);
+      if (listModeInput) listModeInput.checked = true;
+      roundResults = normalizeRoundResults(data.roundResults);
+      extraResults = Array.isArray(data.extraResults) ? [...data.extraResults] : [];
+      currentRound = Math.min(Math.max(0, data.currentRound || 0), ROUNDS.length - 1);
+      isRolling = false;
+
+      const mode = data.drawMode === 'batch' ? 'batch' : 'single';
+      const modeInput = document.querySelector(`#gameArea input[name="drawMode"][value="${mode}"]`);
+      if (modeInput) modeInput.checked = true;
+      syncDrawMode();
+
+      $('drumSingle').classList.remove('hidden');
+      $('drumBatch').classList.add('hidden');
+      $('drumSingle').textContent = '準備就緒';
+      $('currentWinners').innerHTML = '';
+
+      if (data.activePanel === 'summaryArea') {
+        showSummary();
+      } else if (data.inGame || data.activePanel === 'gameArea') {
+        showPanel('gameArea');
+        updateRoundUI();
+      } else {
+        showPanel('setupArea');
+      }
+
+      saveAutoBackup();
+    }
+
+    function exportBackup() {
+      const data = buildBackupData();
+      const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json;charset=utf-8' });
+      const stamp = new Date().toISOString().replace(/[:.]/g, '-').slice(0, 19);
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = `抽獎備份_${stamp}.json`;
+      a.click();
+      URL.revokeObjectURL(a.href);
+      saveAutoBackup();
+    }
+
+    function importBackupFromText(text) {
+      let data;
+      try {
+        data = JSON.parse(text);
+      } catch {
+        alert('備份檔案無法讀取，請確認是否為正確的 JSON 檔。');
+        return;
+      }
+
+      const error = validateBackup(data);
+      if (error) {
+        alert(`無法匯入備份：${error}`);
+        return;
+      }
+
+      if (getActivePanel() !== 'setupArea' && hasBackupProgress({ roundResults, extraResults })) {
+        const ok = confirm('匯入備份會覆蓋目前抽獎進度，確定要繼續嗎？');
+        if (!ok) return;
+      }
+
+      applyBackup(data);
+      alert('備份已成功匯入並恢復。');
+    }
+
+    function saveAutoBackup() {
+      try {
+        const data = buildBackupData();
+        if (!data.inGame && !hasBackupProgress(data)) {
+          localStorage.removeItem(BACKUP_KEY);
+          return;
+        }
+        localStorage.setItem(BACKUP_KEY, JSON.stringify(data));
+      } catch (_) {}
+    }
+
+    function clearAutoBackup() {
+      try { localStorage.removeItem(BACKUP_KEY); } catch (_) {}
+    }
+
+    function tryRestoreAutoBackup() {
+      let raw;
+      try { raw = localStorage.getItem(BACKUP_KEY); } catch { return; }
+      if (!raw) return;
+
+      let data;
+      try { data = JSON.parse(raw); } catch { return; }
+      if (!data.inGame && !hasBackupProgress(data)) return;
+      if (validateBackup(data)) return;
+
+      const when = data.savedAt ? new Date(data.savedAt).toLocaleString('zh-Hant') : '未知時間';
+      const ok = confirm(`偵測到未完成的抽獎備份（${when}），是否立即恢復？`);
+      if (ok) applyBackup(data);
+    }
+
+    function exportCSV() {
+      const lines = ['輪次,名單,序號,姓名'];
+      ROUNDS.forEach((r, i) => {
+        roundResults[i].forEach((name, j) => {
+          lines.push(`${r.label},${listMode === 'merged' ? '' : LIST_NAMES[r.list]},${j + 1},${name}`);
+        });
+      });
+      extraResults.forEach((name, j) => {
+        lines.push(`,,${j + 1},${name}`);
+      });
+      const blob = new Blob(['\uFEFF' + lines.join('\n')], { type: 'text/csv;charset=utf-8' });
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = `抽獎結果_${new Date().toISOString().slice(0, 10)}.csv`;
+      a.click();
+      URL.revokeObjectURL(a.href);
+    }
+
+    function resetAll() {
+      currentRound = 0;
+      roundResults = [[], [], [], []];
+      extraResults = [];
+      isRolling = false;
+      clearAutoBackup();
+      showPanel('setupArea');
+    }
+
+    function startGame() {
+      if (!applyListsFromSetup()) return;
+
+      isRolling = false;
+
+      $('drumSingle').classList.remove('hidden');
+      $('drumBatch').classList.add('hidden');
+      $('drumSingle').textContent = '準備就緒';
+
+      showPanel('gameArea');
+      updateRoundUI();
+      saveAutoBackup();
+    }
+
+    // Events
+    $('listA').addEventListener('input', () => updateCount('listA', 'countA'));
+    $('listB').addEventListener('input', () => updateCount('listB', 'countB'));
+    document.querySelectorAll('.btn-add-person').forEach((btn) => {
+      btn.addEventListener('click', () => addPersonToList(btn.dataset.list, btn.dataset.count));
+    });
+
+    $('btnFillDemo').addEventListener('click', () => loadLists());
+
+    $('btnStart').addEventListener('click', startGame);
+    document.querySelectorAll('#gameArea input[name="drawMode"]').forEach((radio) => {
+      radio.addEventListener('change', () => {
+        if (isRolling) return;
+        syncDrawMode();
+        updateRoundUI();
+        saveAutoBackup();
+      });
+    });
+    $('btnDraw').addEventListener('click', doDraw);
+    $('roundProgress').addEventListener('click', (e) => {
+      const btn = e.target.closest('[data-round]');
+      if (!btn || isRolling) return;
+      switchRound(Number(btn.dataset.round));
+    });
+    $('btnShowSummary').addEventListener('click', () => {
+      if (!allRoundsComplete()) {
+        const ok = confirm('尚有輪次未抽滿，仍要查看目前結果嗎？');
+        if (!ok) return;
+      }
+      showSummary();
+    });
+    $('btnExport').addEventListener('click', exportCSV);
+    document.querySelectorAll('.btn-export-backup').forEach((btn) => {
+      btn.addEventListener('click', exportBackup);
+    });
+    document.querySelectorAll('.btn-import-backup').forEach((btn) => {
+      btn.addEventListener('click', () => $('importBackupFile').click());
+    });
+    $('importBackupFile').addEventListener('change', (e) => {
+      const file = e.target.files[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = () => importBackupFromText(reader.result);
+      reader.readAsText(file, 'utf-8');
+      e.target.value = '';
+    });
+    $('btnBackToGame').addEventListener('click', backToGame);
+    $('btnBackToSetup').addEventListener('click', backToSetup);
+    $('btnBackToSetupFromGame').addEventListener('click', backToSetup);
+    $('btnRestart').addEventListener('click', resetAll);
+
+    const THEME_KEY = 'luckydraw-theme';
+
+    function applyTheme(theme) {
+      document.documentElement.setAttribute('data-theme', theme);
+      $('btnTheme').textContent = theme === 'dark' ? '淺色模式' : '深色模式';
+      try { localStorage.setItem(THEME_KEY, theme); } catch (_) {}
+    }
+
+    function initTheme() {
+      const theme = document.documentElement.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
+      applyTheme(theme);
+    }
+
+    $('btnTheme').addEventListener('click', () => {
+      const next = document.documentElement.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+      applyTheme(next);
+    });
+
+    initTheme();
+    loadLists().then(() => tryRestoreAutoBackup());
+  </script>
+</body>
+</html>
